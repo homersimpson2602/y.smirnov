@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Source+Code+Pro:wght@400;700&display=swap');
+/* 
+font-family: 'Fira Code', monospace;
+font-family: 'Source Code Pro', monospace;
+ */
+
+/* общие стили */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fira Code', monospace;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #EEE;
+  overflow-x: hidden;
+
+}
+
+section {
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+h1 {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 4rem;
+  margin: 20px;
+}
+
+h2 {
+  font-family: 'Source Code Pro', monospace;
+  letter-spacing: .1rem;
+  margin: 0px auto 40px;
+}
+
+h3 {
+  font-family: 'Source Code Pro', monospace;
+  margin: 20px auto 20px;
+}
+
+ul {
+  list-style: none;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0px 20px;
+  margin: 0 auto;
+  display: flex;
+}
+/* главный экран */
+header {
+  height: 100vh;
+  width: 100%; 
+  color: #fff;
+  background: url("../img/main-bg.jpg") no-repeat;
+  background-attachment: fixed;
+  background-position-y: -200px;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 100px;
+  justify-items: center ;
+  align-items: center;
+}
+
+.heading {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.heading__info {
+  font-family: 'Source Code Pro', monospace;
+  line-height: 2rem;
+}
+
+.link-down {
+  position: relative;
+  top:  -100px;
+  padding-right: 1px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #E5E5E5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-down > img {
+  position: relative;
+  animation: link-down 1.5s ease-in-out .75s infinite;
+}
+
+/* меню навигации */
+
+nav {
+  z-index: 1000;
+  background-color: #fff;
+  border-bottom: 1px solid  #EEE;
+}
+
+nav .wrapper {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1440px;
+  transition: all .2s ease-in-out;
+}
+
+nav a {
+  color: #000;
+}
+
+.nav__logo{
+  font-family: 'Source Code Pro', monospace;
+  font-size: 28px;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  height: 60px;
+  line-height: 60px;
+  padding: 0 30px;
+  transition: all .2s ease-in-out;
+  letter-spacing: 1px;
+}
+
+nav ul li:hover {
+  background-color: #EEE;
+}
+
+/* обо мне */
+
+.what-i-do {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.what-i-do img {
+  max-width: 300px;
+  /* box-shadow: 0 3px 1px #555 ; */
+}
+
+.what-i-do p {
+  display: flex;
+  max-width: 600px;
+  line-height: 2rem;
+  align-items: center;
+  text-align: left;
+  position: relative;
+  right: -51%;
+}
+
+/* мои работы */
+.portfolio {
+  background-color: #fff;
+  padding-bottom: 40px;
+
+}
+
+.my-works {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  justify-items: end;
+  position: relative;
+}
+
+.my-works li:nth-child(even) {
+  justify-self: start;
+}
+
+.my-works li {
+  width: 360px;
+  position: relative
+}
+
+.my-works .item-desc {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 360px;
+  height: 360px;
+  background-color: #EEE;
+  transition: all .4s ease;
+  color: #000;
+}
+
+.item-desc p {
+  margin-top: 10px;
+}
+
+.my-works .item-desc::after {
+  content: "";
+  position: absolute;
+  top: 29px;
+  left: 29px;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #fff;
+}
+
+.my-works img:hover ~ .item-desc {
+  opacity: 1;
+}
+
+.item-desc:hover {
+  opacity: 1;
+}
+
+/* стек */
+.tech-stack .container {
+  flex-direction: column;
+  align-items: center;
+}
+
+.tech-stack  span {
+  font-weight: 700;
+} 
+
+.tech-stack ul {
+  text-align: start;
+  margin-bottom: 20px;
+}
+
+.tech-stack ul li {
+  margin: 14px auto;
+}
+
+
+.tech-stack ul li::before {
+  content: '{';
+  position: relative;
+  right: 20px;
+}
+
+.tech-stack ul li::after {
+  content: '}';
+    position: relative;
+    left: 20px;
+}
+
+/* контакты */
+
+.contact {
+  background-color: #fff;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.links__item {
+  position: relative;
+}
+
+.links__item span {
+  font-weight: 700;
+  color:rgb(2, 19, 5);
+}
+
+.links__item::before {
+  content: '';
+  position: absolute;
+  left: -24px;
+  top: 4px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-size: cover;
+}
+
+.links__item:nth-child(1)::before {
+  background: url("../img/mail.svg") no-repeat;
+}
+
+.links__item:nth-child(2)::before {
+  background: url("../img/telegram.svg") no-repeat;
+  background-size: cover;
+}
+
+.links__item:nth-child(3)::before {
+  background: url("../img/github.svg") no-repeat;
+  background-size: cover;
+}
+
+
+/* футер */
+
+footer {
+  height: 50px;
+  text-align: center;
+  color: #fff;
+  background-color: rgb(2, 19, 5);
+  padding: 15px;
+}
+
+
+/* анимация */
+@keyframes link-down {
+  0% {
+    top: -7px;
+    opacity: 0;
+  }
+  50% {
+    top: 0px;
+    opacity: 1;
+  }
+  100% {
+    top: 7px;
+    opacity: 0;
+  }
+}
+
+@keyframes change-pos {
+ 0% {
+  justify-content: space-between;
+ }
+ 100% {
+  justify-content: center;
+ }
+}

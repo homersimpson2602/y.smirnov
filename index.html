@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles/main.css">
+  <title>Yuri S. - Web Developer</title>
+</head>
+<body>
+
+  <header id="main">
+    <div class="heading">
+      <span class="heading__info">Привет, меня зовут Юрий и я</span>
+      <h1>Веб-разработчик</h1>
+      <span class="heading__info">создаю современные и отзывчивые веб-приложения</span>
+    </div>
+    <a href="#nav">
+      <div class="link-down">
+        <img src="img/shevron-down.svg" alt="">
+      </div>
+    </a>
+  </header>
+
+<nav id="nav">
+  <div class="wrapper">
+    <a href="#main">
+      <div class="nav__logo">Yuri Smirnov</div>
+    </a>
+    <ul class="nav__menu menu">
+      <a href="#about">
+        <li class="menu__item">Обо мне</li>
+      </a>
+      <a href="#portfolio"><li class="menu__item">Портфолио</li></a>
+      <a href="#tech-stack"><li class="menu__item">Стек</li></a>
+      <a href="#contact"><li class="menu__item">Контакты</li></a>
+    </ul>
+  </div>
+</nav>
+
+  <section id="about" class="about">
+    <h2>Чем я занимаюсь</h2>
+    <div class="container">
+      <div class="what-i-do">
+        <img src="img/about.jpg" alt="sketch-layout">
+        <p class="what-i-do__info">Я начинающий веб-разработчик. Специализируюсь на front-end разработке, но также открыт для итересных full-stack проектов.<br>Создаю проекты с нуля и корректирую существующие.<br>
+          Постоянно расширяю свои навыки использования инструментов, которые я применяю в своих проектах.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id= "portfolio" class="portfolio">
+    <h2>Мои работы</h2>
+    <ul class="my-works">
+      <li class="my-works__item">
+        <a href="https://homersimpson2602.github.io/animals/">
+          <img src="img/animals.jpg" alt="animals-page">
+          <div class="item-desc">
+            <h4>Animals</h4>
+            <p>Мини-каталог домашних животных</p>
+          </div>
+        </a>
+      </li>
+      <li class="my-works__item">
+        <a href="https://homersimpson2602.github.io/hungry-people-LP/" target="_blank">
+          <img src="img/restaurant-lp.jpg" alt="restaurant-page">
+          <div class="item-desc">
+            <h4>Hungry People</h4>
+            <p>Лендинг-пейдж ресторана</p>
+          </div>
+        </a> 
+      </li>
+      <li class="my-works__item">
+        <a href="https://homersimpson2602.github.io/Aliexpress-JS/" target="_blank">
+          <img src="img/market-place.jpg" alt="market-place-page">
+          <div class="item-desc">
+            <h4>HelloExpress</h4>
+            <p>Страница товаров маркет-плейса</p>
+          </div>
+        </a>
+      </li>
+      <li class="my-works__item">
+        <a href="https://homersimpson2602.github.io/Create-Character/" target="_blank">
+          <img src="img/create-character.jpg" alt="create-character-page">
+          <div class="item-desc">
+            <h4>Создай персонажа</h4>
+            <p>Приложение по созданию карточек-"персонажей"</p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section id="tech-stack" class="tech-stack">
+    <h2>Стек используемых технологий</h2>
+    <div class="container">
+      <ul class="main-stack">
+        <li class="main-stack__item"><span>HTML.</span> Также использывал шаблонизатор Pug в паре учебных проектов</li>
+        <li class="main-stack__item"><span>CSS(SCSS).</span> Именование классов по БЭМ, создание SCC-анимаций</li>
+        <li class="main-stack__item"><span>JavaScript.</span> Интерактив на страницах, анимации</li>
+        <li class="main-stack__item"><span>Parcel / Webpack</span></li>
+        <li class="main-stack__item"><span>Git</span> и <span>GitHub</span></li>
+        <li class="main-stack__item"><span>Photoshop</span> и <span>Figma</span> при работе с дизайн-макетами и графическими элементами</li>
+      </ul>
+      <h3>Дополнительно</h3>
+      <ul class="additionally-stack">
+        <li class="additionally-stack__item">понимаю базовые принципы <span>ООП</span></li>
+        <li class="additionally-stack__item">опыт создания небольших сайтов “под ключ”, с использыванием <span>WordPress</span></li>
+        <li class="additionally-stack__item">создание простого 2D-платформера с использованием <span>С#</span> и <span>Unity</span></li>
+        <li class="additionally-stack__item">в дальнейшем бы хотелось начать применять <span>Vue</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Контакты</h2>
+    <div class="container">
+      <ul class="links">
+        <li class="links__item">Email: <span>smirnov.rabota2602@gmail.com</span></li>
+        <li class="links__item">Telegram: <a href="https://t.me/yuri_smi" target="_blank"><span>yuri_smi</span></a></li>
+        <li class="links__item">GitHub: <a href="https://github.com/homersimpson2602" target="_blank"><span>homersimpson2602</span></a></li>
+      </ul>
+    </div>
+    
+  </section>
+
+  <footer>
+    <span class="sign">Smirnov 2020</span>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
