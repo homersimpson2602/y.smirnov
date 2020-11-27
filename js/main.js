@@ -5,6 +5,8 @@ class Nav {
     // костыль
     this.indentTop = document.querySelector("header").clientHeight
     this.elemHeight = this.$elem.clientHeight
+    this.$menuIco = document.querySelector("img.hamburger-menu")
+    this.$menu = document.querySelector(".menu")
   }
 
   fixedOnTop() {
@@ -18,9 +20,28 @@ class Nav {
     this.$elem.style.position = "static"
     this.$elem.nextSibling.nextSibling.style.marginTop = ""
   }
+
+  // showMobileMenu() {
+  //   this.$menuIco.addEventListener("click", () => {
+  //     console.log("I pressed")
+  //   })
+  // }
 }
 
 const navMenu = new Nav("nav")
+
+window.addEventListener("click", (ev) => {
+  let isShow;
+  if (ev.target === navMenu.$menuIco && !isShow) {
+    navMenu.$menu.style.display = "flex"
+    navMenu.$menu.style.right = "10px"
+    isShow = true;
+  } else if (ev.target !== navMenu.$menuIco) {
+    navMenu.$menu.style.right = "-160px"
+    navMenu.$menu.style.flex = "none"
+    isShow = false;
+  }
+})
 
 window.addEventListener("scroll", () => {
   if ( scrollY >= navMenu.indentTop) {
@@ -30,6 +51,8 @@ window.addEventListener("scroll", () => {
     
   }
 })
+
+
 
 // появление элементов слева/справа
 class Box {

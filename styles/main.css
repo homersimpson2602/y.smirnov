@@ -120,6 +120,18 @@ nav .wrapper {
   transition: all .2s ease-in-out;
 }
 
+nav .hamburger-menu {
+  width: 36px;
+  display: none;
+  transition: all .2s ease;
+  border: 1px solid #fff;
+}
+
+nav .hamburger-menu:hover {
+  box-shadow: 0 0 2px 2px #eee;
+  cursor: pointer;
+}
+
 nav a {
   color: #000;
 }
@@ -146,11 +158,18 @@ nav ul li:hover {
 }
 
 /* обо мне */
+.about {
+  overflow: hidden;
+}
 
 .what-i-do {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+}
+
+.what-i-do__info {
+  margin-left: 20px;
 }
 
 .what-i-do img {
@@ -192,7 +211,9 @@ nav ul li:hover {
 
 .my-works li {
   width: 360px;
-  position: relative
+  position: relative;
+  box-shadow: 0 0 5px 5px #eee;
+
 }
 
 .my-works .item-desc {
@@ -341,11 +362,93 @@ footer {
   }
 }
 
-@keyframes change-pos {
- 0% {
-  justify-content: space-between;
- }
- 100% {
-  justify-content: center;
- }
+/* Медиа запросы */
+@media screen and (max-width: 750px) {
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  header {
+    background-position-y: 0px;
+  }
+
+  /* навигация */
+  nav {
+  }
+
+  nav .wrapper {
+    position: relative;
+    align-items: flex-end;
+    padding: 10px 10px; 
+    background-color: #fff;
+    /* box-shadow: 0 0 2px 2px #eee; */
+  }
+
+  .nav__logo{
+    order: 0;
+  }
+
+  nav .hamburger-menu {
+    display: block;
+    order: 1;
+  }
+  
+  nav ul {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    right: -160px;
+    top: 70px;
+    background-color: #fff;
+    box-shadow: 0 0 2px #EEE;
+    z-index: 1010;
+    transition: right .4s ease-in-out;
+  }
+
+  nav ul li {
+    border-bottom: 1px solid #eee;
+  }
+
+  nav ul li:hover {
+    border: 1px solid #fff;
+  }
+
+  
+/* обо мне */
+
+  .what-i-do {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .what-i-do__info {
+    margin-top: 20px;
+    margin-left: 0px;
+  }
+
+  /* портфолио */
+  .my-works {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    justify-items: center ;
+  }
+  .my-works li:nth-child(even) {
+    justify-self: center;
+  }
+
+/* контакты */
+  .links {
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .links__item {
+    margin: 10px auto;
+  }
+
+  .links__item:nth-child(1)::before {
+    display: none;
+  }
 }
