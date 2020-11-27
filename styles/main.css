@@ -374,9 +374,7 @@ footer {
   }
 
   /* навигация */
-  nav {
-  }
-
+  
   nav .wrapper {
     position: relative;
     align-items: flex-end;
